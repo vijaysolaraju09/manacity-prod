@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  min-height: 100vh;
+  padding-top: 72px;
+  padding-bottom: 50px;
+}
+.primary-title {
+  font-size: 18px;
+  color: #2c2c6a;
+  font-weight: 500;
+}
+.small-title {
+  font-size: 14px;
+  color: #c24510;
+  text-transform: capitalize;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.modal.show {
+  display: flex !important;
+  align-items: center;
+}
+.modal.show .modal-dialog {
+  width: 100%;
+  margin-top: 75px;
+}
+.accordion-button {
+  box-shadow: none !important;
+}
+/* bootstrap-overrides */
+.btn {
+  border: 1px solid;
+  font-size: 12px;
+  background: white;
+  color: black;
+  padding: 5px 5px;
+}
+.btn-danger {
+  border: 1px solid #c24510;
+  color: #c24510;
+}
