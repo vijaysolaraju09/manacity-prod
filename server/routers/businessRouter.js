@@ -147,13 +147,11 @@ router.post(
       res.json({ success: true, updatedUser: business });
     } catch (error) {
       console.error("Error updating profile picture:", error);
-      res
-        .status(500)
-        .json({
-          success: false,
-          error: "Internal Server Error",
-          errorType: errorTypesObj.PROFILE_PICTURE_UPDATE_ERROR,
-        });
+      res.status(500).json({
+        success: false,
+        error: "Internal Server Error",
+        errorType: errorTypesObj.PROFILE_PICTURE_UPDATE_ERROR,
+      });
     }
   }
 );

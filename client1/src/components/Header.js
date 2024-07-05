@@ -17,6 +17,7 @@ import { auth } from "../services/firebase.config";
 import { removeUserDetails } from "../redux/slices/userDetailsSlice";
 import { useEffect } from "react";
 import { fetchCartDetails } from "../redux/actions/fetchCartDetails";
+import ScrollingText from "./ScrollingText";
 
 function Header() {
   const navigate = useNavigate();
@@ -54,49 +55,52 @@ function Header() {
   };
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      className="bg-body-tertiary py-3 shadow header"
-    >
-      <Container>
-        <Link to="/home" className="d-flex nav-brand align-items-end">
-          <img src={logoImg} className="logo-img d-block me-1 mb-2" />
-          <h1 className="logo-title">manaCity</h1>
-        </Link>
-
-        {!user && (
-          <Link
-            to="/signin"
-            className="nav-button nav-link d-block rounded-2 text-white px-2 py-1"
-          >
-            SignIn
+    <>
+      <ScrollingText />
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        className="bg-body-tertiary py-3 shadow header"
+      >
+        <Container>
+          <Link to="/home" className="d-flex nav-brand align-items-end">
+            <img src={logoImg} className="logo-img d-block me-1 mb-2" />
+            <h1 className="logo-title">manaCity</h1>
           </Link>
-        )}
-        {user && (
-          <>
-            <Link to="/cart" className="nav-link">
-              <FaCartArrowDown />
-              {cartItems?.length}
+
+          {!user && (
+            <Link
+              to="/signin"
+              className="nav-button nav-link d-block rounded-2 text-white px-2 py-1"
+            >
+              SignIn
             </Link>
-            {currentLocation === "/profile" ? (
-              <button onClick={onLogout} className="btn btn-danger p-0 px-1">
-                Logout
-              </button>
-            ) : (
-              <>
-                <Link to="/profile" className="d-flex align-items-center">
-                  <img
-                    src={userDetails?.profileImageLink}
-                    className="header-profile"
-                  />
-                </Link>
-              </>
-            )}
-          </>
-        )}
-      </Container>
-    </Navbar>
+          )}
+          {user && (
+            <>
+              <Link to="/cart" className="nav-link">
+                <FaCartArrowDown />
+                {cartItems?.length}
+              </Link>
+              {currentLocation === "/profile" ? (
+                <button onClick={onLogout} className="btn btn-danger p-0 px-1">
+                  Logout
+                </button>
+              ) : (
+                <>
+                  <Link to="/profile" className="d-flex align-items-center">
+                    <img
+                      src={userDetails?.profileImageLink}
+                      className="header-profile"
+                    />
+                  </Link>
+                </>
+              )}
+            </>
+          )}
+        </Container>
+      </Navbar>
+    </>
   );
 }
 
