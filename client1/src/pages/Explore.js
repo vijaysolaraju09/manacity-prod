@@ -14,7 +14,9 @@ function Explore() {
 
   const fetchAllBusinesses = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/all-businesses");
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/all-businesses"
+      );
       const data = await response.json();
 
       if (data.success) {

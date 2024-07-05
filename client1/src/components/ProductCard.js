@@ -16,16 +16,19 @@ function ProductCard({ product }) {
         (item) => item.productId === product._id
       );
       console.log(product._id);
-      const response = await fetch("http://localhost:3001/api/move-to-cart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: userDetails?._id,
-          productId: product?._id,
-        }),
-      });
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/move-to-cart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: userDetails?._id,
+            productId: product?._id,
+          }),
+        }
+      );
       const data = await response.json();
       if (data.success) {
         if (existingCartItem) {
@@ -48,7 +51,7 @@ function ProductCard({ product }) {
   const handleDecrementFromCart = async (product) => {
     try {
       const response = await fetch(
-        "http://localhost:3001/api/decrement-from-cart",
+        "https://manacity-server.onrender.com/api/decrement-from-cart",
         {
           method: "POST",
           headers: {

@@ -7,7 +7,7 @@ const WalletSchema = new Schema({
   },
   walletBalance: {
     type: Number,
-    default: 0,
+    default: 100,
   },
   transactionHistory: [
     {

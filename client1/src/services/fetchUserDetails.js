@@ -2,7 +2,7 @@ export const fetchUserDetails = async (phoneNumber) => {
   try {
     const formattedPhoneNumber = phoneNumber.replace("+", "");
     const response = await fetch(
-      `http://localhost:3001/api/user-details?phoneNumber=${formattedPhoneNumber}`
+      `https://manacity-server.onrender.com/api/user-details?phoneNumber=${formattedPhoneNumber}`
     );
     const data = await response.json();
 

@@ -3,7 +3,7 @@ import { setCartItems } from "../slices/cartSlice";
 export const fetchCartDetails = (userId) => async (dispatch) => {
   try {
     const response = await fetch(
-      `http://localhost:3001/api/cart-details?userId=${userId}`
+      `https://manacity-server.onrender.com/api/cart-details?userId=${userId}`
     );
     const data = await response.json();
 

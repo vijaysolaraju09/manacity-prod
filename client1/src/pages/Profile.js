@@ -66,7 +66,7 @@ function Profile() {
       }
 
       const response = await fetch(
-        `http://localhost:3001/api/${
+        `https://manacity-server.onrender.com/api/${
           userDetails?.userType === "customer"
             ? "update-user"
             : "update-business"
@@ -103,7 +103,7 @@ function Profile() {
         formData.append("profileImage", file);
         setLoader(true);
         const response = await fetch(
-          `http://localhost:3001/api/update-profile-picture?phoneNumber=${userDetails?.mobileNumber}`,
+          `https://manacity-server.onrender.com/api/update-profile-picture?phoneNumber=${userDetails?.mobileNumber}`,
           {
             method: "POST",
             body: formData,

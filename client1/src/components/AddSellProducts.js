@@ -42,7 +42,7 @@ function AddSellProducts({ isForSale }) {
   const fetchAllProducts = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/all-products?businessId=${businessId}`
+        `https://manacity-server.onrender.com/api/all-products?businessId=${businessId}`
       );
       const data = await response.json();
 
@@ -91,10 +91,13 @@ function AddSellProducts({ isForSale }) {
         formData.append("isForSale", false);
       }
 
-      const response = await fetch("http://localhost:3001/api/add-product", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/add-product",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
 
@@ -121,15 +124,18 @@ function AddSellProducts({ isForSale }) {
 
   const handleRemoveProduct = async (productId) => {
     try {
-      const response = await fetch("http://localhost:3001/api/remove-product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productId,
-        }),
-      });
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/remove-product",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productId,
+          }),
+        }
+      );
 
       const data = await response.json();
 

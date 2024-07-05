@@ -17,7 +17,7 @@ function ShopDetails() {
   const fetchBusinessDetails = async (businessId) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/business-details?businessId=${businessId}`
+        `https://manacity-server.onrender.com/api/business-details?businessId=${businessId}`
       );
       const data = await response.json();
 

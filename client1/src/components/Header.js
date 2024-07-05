@@ -35,7 +35,7 @@ function Header() {
     }
   }, [userDetails]);
   useEffect(() => {
-    console.log("Cart items updated:", cartItems);
+    // console.log("Cart items updated:", cartItems);
   }, [cartItems]);
   const onLogout = () => {
     // Perform logout action

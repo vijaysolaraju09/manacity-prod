@@ -61,14 +61,17 @@ const Signin = () => {
   const onCheckAndSignin = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3001/api/validate-user", {
-        method: "POST",
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/validate-user",
+        {
+          method: "POST",
 
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ mobileNumber: ph }),
-      });
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ mobileNumber: ph }),
+        }
+      );
       const data = await response.json();
       if (data.success) {
         onCaptchVerify();
@@ -127,7 +130,7 @@ const Signin = () => {
           const formattedDate = currentDate.toISOString(); // Format date as string
           if (userType === "customer") {
             const response = await fetch(
-              "http://localhost:3001/api/register-user",
+              "https://manacity-server.onrender.com/api/register-user",
               {
                 method: "POST",
                 headers: {
@@ -161,7 +164,7 @@ const Signin = () => {
             console.log("business");
 
             const response = await fetch(
-              "http://localhost:3001/api/register-business",
+              "https://manacity-server.onrender.com/api/register-business",
               {
                 method: "POST",
                 headers: {

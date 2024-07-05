@@ -1,7 +1,7 @@
 export const fetchWalletDetails = async (mobileNumber) => {
   try {
     const response = await fetch(
-      `http://localhost:3001/api/get-wallet-details?mobileNumber=${mobileNumber}`
+      `https://manacity-server.onrender.com/api/get-wallet-details?mobileNumber=${mobileNumber}`
     );
     const data = await response.json();
 

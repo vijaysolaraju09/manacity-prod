@@ -4,7 +4,7 @@ export const fetchCartItemDetails = (productIds) => async (dispatch) => {
   console.log(productIds);
   try {
     const response = await fetch(
-      "http://localhost:3001/api/fetch-product-details",
+      "https://manacity-server.onrender.com/api/fetch-product-details",
       {
         method: "POST",
         headers: {

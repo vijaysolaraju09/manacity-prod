@@ -20,16 +20,19 @@ function Wallet() {
 
   const handleAddMoney = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/add-money", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: walletDetails.userId,
-          amount: parseInt(addMoneyAmount), // Convert to number
-        }),
-      });
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/add-money",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: walletDetails.userId,
+            amount: parseInt(addMoneyAmount), // Convert to number
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -59,16 +62,19 @@ function Wallet() {
         return;
       }
 
-      const response = await fetch("http://localhost:3001/api/withdraw-money", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: walletDetails?.userId,
-          amount: parseInt(withdrawAmount),
-        }),
-      });
+      const response = await fetch(
+        "https://manacity-server.onrender.com/api/withdraw-money",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: walletDetails?.userId,
+            amount: parseInt(withdrawAmount),
+          }),
+        }
+      );
 
       const data = await response.json();
 

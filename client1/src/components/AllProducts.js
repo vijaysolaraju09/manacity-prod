@@ -18,7 +18,7 @@ function AllProducts({ isForSale, businessId }) {
   const fetchAllProducts = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/all-products?businessId=${businessId}`
+        `https://manacity-server.onrender.com/api/all-products?businessId=${businessId}`
       );
       const data = await response.json();
 
